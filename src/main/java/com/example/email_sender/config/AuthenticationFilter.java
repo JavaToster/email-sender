@@ -7,6 +7,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
@@ -22,7 +23,8 @@ import java.util.Collections;
 public class AuthenticationFilter extends OncePerRequestFilter {
 
     private static final String SERVICE_HEADER     = "Authorization-key";
-    private static final String SERVICE_TOKEN      = "authenticationMicroserviceForSendingRecoveryCodes";
+    @Value("${security.header.clients.key}")
+    private String SERVICE_TOKEN = "authenticationMicroserviceForSendingRecoveryCodes";
 
     private final JwtUtil jwtUtil;
 

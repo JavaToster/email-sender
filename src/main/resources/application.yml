@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: email-sender
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: ${SERVER_PORT}
+
+security:
+  jwt:
+    secret: ${SECURITY_JWT}
+  header:
+    clients:
+      key: ${SECURITY_HEADER_CLIENTS_KEY}
+
+email:
+  from: ${EMAIL_FROM}
