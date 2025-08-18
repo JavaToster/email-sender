@@ -24,7 +24,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
 
     private static final String SERVICE_HEADER     = "Authorization-key";
     @Value("${security.header.clients.key}")
-    private String SERVICE_TOKEN = "authenticationMicroserviceForSendingRecoveryCodes";
+    private String SERVICE_TOKEN;
 
     private final JwtUtil jwtUtil;
 
@@ -42,7 +42,9 @@ public class AuthenticationFilter extends OncePerRequestFilter {
         }else {
             // 2) Иначе пытаемся сервисную аутентификацию по кастомному заголовку
             String serviceHeader = request.getHeader(SERVICE_HEADER);
+            System.out.println(serviceHeader);
             if (isValid(serviceHeader) && SERVICE_TOKEN.equals(serviceHeader)) {
+                System.out.println(1);
                 UserDetails svcUser = new User(
                         "authenticationMicroservice",
                         "",

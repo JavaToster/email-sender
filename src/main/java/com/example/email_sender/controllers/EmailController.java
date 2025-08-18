@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,5 +26,10 @@ public class EmailController {
 
         emailService.sendRestoreCode(emailDTO);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping("/ping")
+    public String ping(){
+        return "pong";
     }
 }

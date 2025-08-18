@@ -15,13 +15,12 @@ spring:
 
 server:
   port: ${SERVER_PORT}
-
 security:
   jwt:
     secret: ${SECURITY_JWT}
   header:
     clients:
-      key: ${SECURITY_HEADER_CLIENTS_KEY}
+      key: ${SECURITY_CLIENTS_HEADER_KEY}
 
 email:
-  from: ${EMAIL_FROM}
+  from: ${EMAIL_USERNAME}
