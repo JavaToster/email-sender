@@ -1,4 +1,4 @@
-package com.example.email_sender.security;
+package com.example.email_sender.security.JWT;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;

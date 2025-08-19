@@ -1,7 +1,8 @@
-package com.example.email_sender.config;
+package com.example.email_sender.security.filters;
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.example.email_sender.security.JwtUtil;
+import com.example.email_sender.security.JWT.JwtUtil;
+
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

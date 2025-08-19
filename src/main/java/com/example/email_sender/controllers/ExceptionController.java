@@ -1,4 +1,4 @@
-package com.example.email_sender.forExceptions;
+package com.example.email_sender.controllers;
 
 import com.example.email_sender.DTO.ErrorMessageDTO;
 import jakarta.validation.ValidationException;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class ExceptionsHandler {
+public class ExceptionController {
     @ExceptionHandler
     public ResponseEntity<ErrorMessageDTO> exceptionHandle(ValidationException e){
         return new ResponseEntity<>(new ErrorMessageDTO(e.getMessage()), HttpStatus.BAD_REQUEST);
